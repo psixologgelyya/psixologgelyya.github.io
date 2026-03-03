@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="uk" class="h-full">
 <head>
   <meta charset="UTF-8">
@@ -45,4 +45,81 @@
     }
     .nav-link::after {
       content: '';
-      position:
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--color-primary);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    /* Сторінки */
+    .page {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .page.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* ФОНОВЕ ФОТО */
+    .hero-container {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg-blur {
+      position: absolute;
+      inset: 0;
+      background-image: url('photo_2026-02-25_18-20-26.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px) brightness(0.35);
+      transform: scale(1.1);
+      z-index: -1;
+    }
+
+    /* Кнопки */
+    .btn-primary {
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      background: transparent;
+      transition: all 0.3s ease;
+      padding: 12px 24px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 4px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-primary:hover {
+      background: var(--color-primary);
+      color: #000;
+    }
+
+    /* Карти */
+    .card-hover {
+      background: var(--color-surface);
+      border: 1px solid rgba(201, 168, 108, 0.1);
+      transition: transform 0.3s ease;
+      border-radius: 8px;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Стати (3+/1000+) */
+    .stats-grid {
+      gap: 1rem;
