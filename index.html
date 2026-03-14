@@ -4,38 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Водяник Ангеліна — психолог</title>
+
 <script src="https://cdn.tailwindcss.com"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+
 body{
 background:#0f0f0f;
 color:#e8e4df;
 font-family:Montserrat;
 }
+
 .font-serif{
 font-family:"Cormorant Garamond";
 }
+
 .primary{
 color:#c9a86c;
 }
+
 .btn{
 border:1px solid #c9a86c;
 padding:12px 26px;
 transition:.3s;
 }
+
 .btn:hover{
 background:#c9a86c;
 color:black;
 }
+
 .page{
 display:none;
 opacity:0;
 transition:.6s;
 }
+
 .page.active{
 display:block;
 opacity:1;
 }
+
 .hero-bg{
 position:absolute;
 inset:0;
@@ -43,6 +54,7 @@ background:url(photo_2026-02-25_18-20-26.jpg) center/cover;
 filter:blur(8px) brightness(.35);
 transform:scale(1.1);
 }
+
 .service-card{
 background:#1a1a1a;
 padding:30px;
@@ -51,34 +63,50 @@ transition:.35s;
 border:1px solid rgba(201,168,108,.15);
 cursor:pointer;
 }
+
 .service-card:hover{
 transform:translateY(-6px);
 border-color:#c9a86c;
 }
+
 .service-card.active{
 border-color:#c9a86c;
 box-shadow:0 20px 40px rgba(201,168,108,.3);
 }
+
 .service-details{
 max-height:0;
 overflow:hidden;
 transition:all .4s ease;
 }
+
 .service-card.active .service-details{
 max-height:500px;
 margin-top:20px;
 padding-top:20px;
 border-top:1px solid rgba(201,168,108,.2);
 }
+
 .fade{
 opacity:0;
 transform:translateY(40px);
 transition:1s;
 }
+
 .fade.show{
 opacity:1;
 transform:translateY(0);
 }
+
+.gallery img{
+border-radius:10px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.06);
+}
+
 .float{
 position:fixed;
 right:20px;
@@ -87,251 +115,152 @@ display:flex;
 flex-direction:column;
 gap:10px;
 }
+
 .float a{
 background:#1a1a1a;
 border:1px solid #c9a86c;
 padding:10px 16px;
 font-size:12px;
 }
+
 @media(max-width:768px){
+
 .hero-title{
 font-size:34px;
 line-height:1.2;
 }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
+
 <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur border-b border-white/5">
+
 <div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
+
 <div onclick="navigateTo('home')" class="font-serif text-xl primary cursor-pointer">
 Водяник Ангеліна
 </div>
+
 <div class="hidden md:flex gap-8 text-sm">
+
 <div onclick="navigateTo('home')" class="cursor-pointer">Головна</div>
 <div onclick="navigateTo('about')" class="cursor-pointer">Про мене</div>
 <div onclick="navigateTo('services')" class="cursor-pointer">Послуги</div>
+<div onclick="navigateTo('gallery')" class="cursor-pointer">Галерея</div>
 <div onclick="navigateTo('contact')" class="cursor-pointer">Контакти</div>
+
 </div>
 </div>
 </nav>
 
+
 <!-- HOME -->
+
 <div id="page-home" class="page active">
+
 <section class="min-h-screen flex items-center justify-center text-center relative px-6">
+
 <div class="hero-bg"></div>
+
 <div class="relative max-w-3xl">
+
 <p class="uppercase tracking-[0.4em] text-sm primary mb-4">
 Психолог • Recovery Specialist
 </p>
+
 <h1 class="font-serif text-6xl hero-title mb-6">
 Робота з тривогою,
 <span class="primary">ОКР та залежностями</span>
 </h1>
+
 <p class="opacity-80 mb-10 text-lg">
 Зміна нейронних зв'язків через експозицію та десенсибілізацію
 </p>
+
 <div class="flex justify-center gap-4 flex-wrap">
+
 <button onclick="navigateTo('contact')" class="btn">
 Записатися
 </button>
+
 <button onclick="navigateTo('services')" class="btn">
 Послуги
 </button>
+
 </div>
 </div>
 </section>
 </div>
 
-<!-- ABOUT -->
-<div id="page-about" class="page">
-<section class="pt-32 pb-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6">
-<img src="photo_2026-02-25_18-20-26.jpg" class="rounded shadow-2xl fade">
-<div class="fade">
-<h2 class="font-serif text-4xl mb-6">
-Про мене
-</h2>
-<p class="opacity-80 mb-6">
-Я психолог і Recovery Specialist. Працюю з тривожними розладами,
-ОКР та залежностями, використовуючи доказові методи психотерапії.
-</p>
-<p class="opacity-80">
-У роботі використовую когнітивно-поведінкову терапію,
-експозицію та десенсибілізацію для зміни нейронних
-механізмів, які підтримують розлад.
-</p>
-</div>
-</section>
-</div>
 
-<!-- SERVICES -->
-<div id="page-services" class="page">
+<!-- GALLERY -->
+
+<div id="page-gallery" class="page">
+
 <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+
 <h2 class="font-serif text-5xl text-center mb-16">
-Послуги
+Галерея
 </h2>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Тривожні розлади
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Робота з генералізованою тривогою, соціальною тривожністю,
-панічними атаками та фобіями.
-</p>
-<div class="service-details">
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Методи:</span> Когнітивно-поведінкова терапія (КПТ), поступова експозиція, техніки релаксації, когнітивна реструктуризація. Допомагаю розпізнати автоматичні негативні думки та замінити їх раціональними.
-</p>
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Результат:</span> Зменшення частоти та інтенсивності тривоги, покращення якості життя, впевненість у соціальних ситуаціях.
-</p>
-</div>
+
+<div class="grid md:grid-cols-3 gap-8 gallery">
+
+<img src="photo1.jpg" class="fade">
+<img src="photo2.jpg" class="fade">
+<img src="photo3.jpg" class="fade">
+
+<img src="photo4.jpg" class="fade">
+<img src="photo5.jpg" class="fade">
+<img src="photo6.jpg" class="fade">
+
 </div>
 
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-ОКР
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Терапія нав'язливих думок та ритуалів через ERP-метод.
-</p>
-<div class="service-details">
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">ERP (Exposure and Response Prevention):</span> Золота стандарт терапії ОКР. Поступове зіткнення з тригерами без виконання компульсій.
-</p>
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Для кого:</span> Люди з обсесивно-компульсивним розладом, що страждають від ритуалів миття, перевіряння, потребі в симетрії.
-</p>
-<p class="opacity-80">
-<span class="primary font-semibold">Ефективність:</span> 60-80% зменшення симптомів за 12-20 сесій.
-</p>
-</div>
-</div>
-
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Залежності
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Алкогольні, наркотичні та поведінкові залежності.
-</p>
-<div class="service-details">
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Комплексний підхід:</span> Мотиваційне інтерв'ю, КПТ, рецидив-превенція, робота з тригерами, формування здорових звичок.
-</p>
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Стадії роботи:</span> 1) Підвищення мотивації 2) Розвиток навичок самоконтролю 3) Профілактика рецидивів 4) Підтримуюча терапія.
-</p>
-<p class="opacity-80">
-<span class="primary font-semibold">Для кого:</span> Алкоголізм, наркозалежність, ігроманія, харчова залежність.
-</p>
-</div>
-</div>
-
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Сексологія
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Терапія сексуальних дисфункцій та психологічних блоків.
-</p>
-<div class="service-details">
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Проблематика:</span> Фригідність, еректильна дисфункція, відсутність оргазму, сексуальні фобії, невідповідність лібідо в парі.
-</p>
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Методи:</span> Сенсатно-фокусна терапія, когнітивно-поведінкова секс-терапія, вправи Кегеля, мастурбаційна тренувальна програма.
-</p>
-<p class="opacity-80">
-<span class="primary font-semibold">Результат:</span> Повернення сексуального задоволення, гармонізація інтимного життя.
-</p>
-</div>
-</div>
-
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Панічні атаки
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Робота з панічними атаками та страхом втрати контролю.
-</p>
-<div class="service-details">
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Інтероцептивна експозиція:</span> Навмисне викликання симптомів панічних атак у контрольованому середовищі для десенсибілізації.
-</p>
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Навички:</span> Дихальні вправи, прогресивна м'язова релаксація, техніка заземлення 5-4-3-2-1.
-</p>
-<p class="opacity-80">
-<span class="primary font-semibold">Результат:</span> Зникнення страху перед атаками, нормалізація автономної нервової системи.
-</p>
-</div>
-</div>
-
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Онлайн консультація
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Індивідуальна онлайн-сесія з формування плану терапії.
-</p>
-<div class="service-details">
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Формат:</span> Zoom, Skype, Google Meet. Тривалість 50-60 хвилин.
-</p>
-<p class="opacity-80 mb-4">
-<span class="primary font-semibold">Структура:</span> 1) Діагностика 2) План терапії 3) Домашні завдання 4) Контроль ефективності.
-</p>
-<p class="opacity-80">
-<span class="primary font-semibold">Переваги:</span> Зручно, конфіденційно, можна працювати з будь-якого місця.
-</p>
-</div>
-</div>
-</div>
 </section>
 </div>
+
 
 <!-- CONTACT -->
+
 <div id="page-contact" class="page">
+
 <section class="pt-32 pb-20 text-center px-6">
+
 <h2 class="font-serif text-5xl mb-10">
 Контакти
 </h2>
+
 <p class="mb-4 text-xl">
 WhatsApp: <span class="primary font-semibold">+380986528383</span>
 </p>
+
 <div class="flex flex-wrap justify-center gap-4 mb-8 max-w-md mx-auto">
+
 <a href="https://www.instagram.com/psixologgelyya" target="_blank" class="btn flex-1 min-w-[140px] justify-center">
 Instagram
 </a>
+
 <a href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk" target="_blank" class="btn flex-1 min-w-[140px] justify-center">
 TikTok
 </a>
+
 <a href="https://wa.me/380986528383" class="btn flex-1 min-w-[140px] justify-center">
 WhatsApp
 </a>
+
 </div>
+
 </section>
 </div>
 
-<!-- FLOAT BUTTONS -->
-<div class="float">
-<a href="https://wa.me/380986528383">
-WhatsApp
-</a>
-<a href="https://www.instagram.com/psixologgelyya">
-Instagram
-</a>
-<a href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk" style="background:#ff0050;border-color:#ff0050;">
-TikTok
-</a>
-</div>
 
 <script>
+
 function navigateTo(page){
 document.querySelectorAll(".page").forEach(p=>{
 p.classList.remove("active")
@@ -340,7 +269,7 @@ document.getElementById("page-"+page).classList.add("active")
 window.scrollTo({top:0,behavior:"smooth"})
 }
 
-function toggleService(card) {
+function toggleService(card){
 card.classList.toggle('active')
 }
 
@@ -355,8 +284,8 @@ entry.target.classList.add("show")
 document.querySelectorAll(".fade").forEach(el=>{
 observer.observe(el)
 })
+
 </script>
 
 </body>
 </html>
-
