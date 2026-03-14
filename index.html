@@ -55,38 +55,6 @@ filter:blur(8px) brightness(.35);
 transform:scale(1.1);
 }
 
-.service-card{
-background:#1a1a1a;
-padding:30px;
-border-radius:10px;
-transition:.35s;
-border:1px solid rgba(201,168,108,.15);
-cursor:pointer;
-}
-
-.service-card:hover{
-transform:translateY(-6px);
-border-color:#c9a86c;
-}
-
-.service-card.active{
-border-color:#c9a86c;
-box-shadow:0 20px 40px rgba(201,168,108,.3);
-}
-
-.service-details{
-max-height:0;
-overflow:hidden;
-transition:all .4s ease;
-}
-
-.service-card.active .service-details{
-max-height:500px;
-margin-top:20px;
-padding-top:20px;
-border-top:1px solid rgba(201,168,108,.2);
-}
-
 .fade{
 opacity:0;
 transform:translateY(40px);
@@ -104,32 +72,7 @@ transition:.4s;
 }
 
 .gallery img:hover{
-transform:scale(1.06);
-}
-
-.float{
-position:fixed;
-right:20px;
-bottom:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.float a{
-background:#1a1a1a;
-border:1px solid #c9a86c;
-padding:10px 16px;
-font-size:12px;
-}
-
-@media(max-width:768px){
-
-.hero-title{
-font-size:34px;
-line-height:1.2;
-}
-
+transform:scale(1.05);
 }
 
 </style>
@@ -137,9 +80,10 @@ line-height:1.2;
 
 <body>
 
+
 <!-- NAV -->
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur border-b border-white/5">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-white/10">
 
 <div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
 
@@ -147,17 +91,23 @@ line-height:1.2;
 Водяник Ангеліна
 </div>
 
-<div class="hidden md:flex gap-8 text-sm">
+<div class="flex gap-6 text-sm">
 
-<div onclick="navigateTo('home')" class="cursor-pointer">Головна</div>
-<div onclick="navigateTo('about')" class="cursor-pointer">Про мене</div>
-<div onclick="navigateTo('services')" class="cursor-pointer">Послуги</div>
-<div onclick="navigateTo('gallery')" class="cursor-pointer">Галерея</div>
-<div onclick="navigateTo('contact')" class="cursor-pointer">Контакти</div>
+<div onclick="navigateTo('home')" class="cursor-pointer hover:text-[#c9a86c]">Головна</div>
+
+<div onclick="navigateTo('about')" class="cursor-pointer hover:text-[#c9a86c]">Про мене</div>
+
+<div onclick="navigateTo('services')" class="cursor-pointer hover:text-[#c9a86c]">Послуги</div>
+
+<div onclick="navigateTo('gallery')" class="cursor-pointer hover:text-[#c9a86c]">Галерея</div>
+
+<div onclick="navigateTo('contact')" class="cursor-pointer hover:text-[#c9a86c]">Контакти</div>
 
 </div>
 </div>
+
 </nav>
+
 
 
 <!-- HOME -->
@@ -174,7 +124,7 @@ line-height:1.2;
 Психолог • Recovery Specialist
 </p>
 
-<h1 class="font-serif text-6xl hero-title mb-6">
+<h1 class="font-serif text-6xl mb-6">
 Робота з тривогою,
 <span class="primary">ОКР та залежностями</span>
 </h1>
@@ -194,9 +144,66 @@ line-height:1.2;
 </button>
 
 </div>
+
 </div>
 </section>
+
 </div>
+
+
+
+<!-- ABOUT -->
+
+<div id="page-about" class="page">
+
+<section class="pt-32 pb-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6">
+
+<img src="photo_2026-02-25_18-20-26.jpg" class="rounded shadow-2xl fade">
+
+<div class="fade">
+
+<h2 class="font-serif text-4xl mb-6">
+Про мене
+</h2>
+
+<p class="opacity-80 mb-6">
+Я психолог і Recovery Specialist. Працюю з тривожними розладами,
+ОКР та залежностями, використовуючи доказові методи психотерапії.
+</p>
+
+<p class="opacity-80">
+У роботі використовую когнітивно-поведінкову терапію,
+експозицію та десенсибілізацію для зміни нейронних
+механізмів, які підтримують розлад.
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<!-- SERVICES -->
+
+<div id="page-services" class="page">
+
+<section class="pt-32 pb-20 text-center px-6">
+
+<h2 class="font-serif text-5xl mb-10">
+Послуги
+</h2>
+
+<p class="opacity-80 max-w-xl mx-auto">
+Терапія тривожних розладів, ОКР, залежностей,
+панічних атак та індивідуальні консультації.
+</p>
+
+</section>
+
+</div>
+
 
 
 <!-- GALLERY -->
@@ -222,7 +229,9 @@ line-height:1.2;
 </div>
 
 </section>
+
 </div>
+
 
 
 <!-- CONTACT -->
@@ -239,38 +248,40 @@ line-height:1.2;
 WhatsApp: <span class="primary font-semibold">+380986528383</span>
 </p>
 
-<div class="flex flex-wrap justify-center gap-4 mb-8 max-w-md mx-auto">
+<div class="flex justify-center gap-4 flex-wrap">
 
-<a href="https://www.instagram.com/psixologgelyya" target="_blank" class="btn flex-1 min-w-[140px] justify-center">
+<a href="https://www.instagram.com/psixologgelyya" target="_blank" class="btn">
 Instagram
 </a>
 
-<a href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk" target="_blank" class="btn flex-1 min-w-[140px] justify-center">
+<a href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk" target="_blank" class="btn">
 TikTok
 </a>
 
-<a href="https://wa.me/380986528383" class="btn flex-1 min-w-[140px] justify-center">
+<a href="https://wa.me/380986528383" class="btn">
 WhatsApp
 </a>
 
 </div>
 
 </section>
+
 </div>
+
 
 
 <script>
 
 function navigateTo(page){
+
 document.querySelectorAll(".page").forEach(p=>{
 p.classList.remove("active")
 })
-document.getElementById("page-"+page).classList.add("active")
-window.scrollTo({top:0,behavior:"smooth"})
-}
 
-function toggleService(card){
-card.classList.toggle('active')
+document.getElementById("page-"+page).classList.add("active")
+
+window.scrollTo({top:0,behavior:"smooth"})
+
 }
 
 const observer=new IntersectionObserver(entries=>{
