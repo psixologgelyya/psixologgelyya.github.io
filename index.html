@@ -1,4 +1,5 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
@@ -11,51 +12,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
 body{
 background:#0f0f0f;
 color:#e8e4df;
 font-family:"Montserrat",sans-serif;
 }
+
 .font-serif{
 font-family:"Cormorant Garamond",serif;
 }
+
 .primary{
 color:#c9a86c;
 }
+
 .btn{
 border:1px solid #c9a86c;
 padding:12px 26px;
 transition:.3s;
-display:inline-flex;
+display:flex;
 align-items:center;
 justify-content:center;
-text-decoration:none;
-color:inherit;
-border-radius:4px;
-font-weight:500;
 }
+
 .btn:hover{
 background:#c9a86c;
 color:#000;
 }
+
 .page{
 display:none;
-opacity:0;
-transition:.6s;
 }
+
 .page.active{
 display:block;
-opacity:1;
 }
+
 .hero-bg{
 position:absolute;
 inset:0;
-background:linear-gradient(135deg,rgba(15,15,15,0.9) 0%,rgba(0,0,0,0.95) 100%),url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'><rect fill='%230f0f0f' width='1200' height='800'/><text x='50%' y='50%' font-family='serif' font-size='100' fill='%23c9a86c' text-anchor='middle' dy='.3em'>Ангеліна Водяник</text></svg>");
-background-size:cover;
-background-position:center;
+background:url("photo_2026-02-25_18-20-26.jpg") center/cover no-repeat;
 filter:blur(8px) brightness(.35);
 transform:scale(1.1);
 }
+
 .service-card{
 background:#1a1a1a;
 padding:30px;
@@ -64,283 +65,280 @@ border:1px solid rgba(201,168,108,.15);
 cursor:pointer;
 transition:.35s;
 }
+
 .service-card:hover{
 transform:translateY(-6px);
 border-color:#c9a86c;
 }
-.service-card.active{
-border-color:#c9a86c;
-box-shadow:0 20px 40px rgba(201,168,108,.3);
-}
+
 .service-details{
-max-height:0;
-overflow:hidden;
-transition:.4s;
+display:none;
+margin-top:15px;
 }
+
 .service-card.active .service-details{
-max-height:1200px;
-margin-top:20px;
-padding-top:20px;
-border-top:1px solid rgba(201,168,108,.2);
+display:block;
 }
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
+
+.gallery img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
 }
-.fade.show{
-opacity:1;
-transform:translateY(0);
+
+.gallery img:hover{
+transform:scale(1.05);
 }
-@media(max-width:768px){
-.hero-title{
-font-size:34px !important;
-line-height:1.2;
-}
-nav div[class*="gap"]{
-flex-direction:column!important;
-gap:8px!important;
-position:absolute;
-top:100%;
-left:0;
-right:0;
-background:rgba(0,0,0,0.98);
-padding:20px;
-border-top:1px solid rgba(255,255,255,0.1);
-}
-}
+
 </style>
 
 </head>
 
 <body>
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-white/10">
-<div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
-<div onclick="navigateTo('home')" class="font-serif text-xl primary cursor-pointer hover:opacity-80 transition-opacity">
+<!-- NAV -->
+
+<nav class="fixed top-0 left-0 right-0 bg-black border-b border-white/10 z-50">
+
+<div class="max-w-6xl mx-auto flex justify-between items-center h-16 px-6">
+
+<div onclick="navigateTo('home')" class="font-serif text-lg primary cursor-pointer">
 Водяник Ангеліна
 </div>
 
-<div class="flex gap-4 md:gap-8 text-sm">
-<div onclick="navigateTo('home')" class="cursor-pointer hover:text-[#c9a86c] px-2 py-1 rounded transition-colors">Головна</div>
-<div onclick="navigateTo('about')" class="cursor-pointer hover:text-[#c9a86c] px-2 py-1 rounded transition-colors">Про мене</div>
-<div onclick="navigateTo('services')" class="cursor-pointer hover:text-[#c9a86c] px-2 py-1 rounded transition-colors">Послуги</div>
-<div onclick="navigateTo('gallery')" class="cursor-pointer hover:text-[#c9a86c] px-2 py-1 rounded transition-colors">Галерея</div>
-<div onclick="navigateTo('contact')" class="cursor-pointer hover:text-[#c9a86c] px-2 py-1 rounded transition-colors">Контакти</div>
+<div class="flex gap-6 text-sm">
+
+<div onclick="navigateTo('home')" class="cursor-pointer">Головна</div>
+<div onclick="navigateTo('about')" class="cursor-pointer">Про мене</div>
+<div onclick="navigateTo('services')" class="cursor-pointer">Послуги</div>
+<div onclick="navigateTo('gallery')" class="cursor-pointer">Галерея</div>
+<div onclick="navigateTo('contact')" class="cursor-pointer">Контакти</div>
+
 </div>
+
 </div>
+
 </nav>
 
+<!-- HOME -->
+
 <div id="page-home" class="page active">
+
 <section class="min-h-screen flex items-center justify-center text-center relative px-6">
+
 <div class="hero-bg"></div>
+
 <div class="relative max-w-3xl">
+
 <p class="uppercase tracking-[0.4em] text-sm primary mb-4">
 Психолог • Recovery Specialist
 </p>
-<h1 class="font-serif text-6xl hero-title mb-6">
+
+<h1 class="font-serif text-6xl mb-6">
 Робота з тривогою,
 <span class="primary">ОКР та залежностями</span>
 </h1>
+
 <p class="opacity-80 mb-10 text-lg">
 Зміна нейронних зв'язків через експозицію та десенсибілізацію
 </p>
-<div class="flex justify-center gap-4 flex-wrap">
+
+<div class="flex justify-center gap-4">
+
 <button onclick="navigateTo('contact')" class="btn">
 Записатися
 </button>
+
 <button onclick="navigateTo('services')" class="btn">
 Послуги
 </button>
+
 </div>
+
 </div>
+
 </section>
+
 </div>
+
+<!-- ABOUT -->
 
 <div id="page-about" class="page">
-<section class="pt-32 pb-20 px-6 max-w-4xl mx-auto text-center fade">
-<h2 class="font-serif text-5xl mb-12">Про мене</h2>
-<p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
-Спеціаліст з ERP терапії, інтероцептивної експозиції та роботи з ОКР. 5+ років практики.
+
+<section class="pt-32 pb-20 max-w-5xl mx-auto px-6">
+
+<h2 class="font-serif text-4xl mb-6">
+Про мене
+</h2>
+
+<p class="opacity-80 mb-4">
+Я психолог і Recovery Specialist.
+Працюю з тривожними розладами, ОКР та залежностями.
 </p>
-<p class="opacity-80 text-lg max-w-xl mx-auto">
-Практичний підхід без нескінченного копання в минулому. Зміна поведінки = зміна мозку.
+
+<p class="opacity-80">
+Використовую когнітивно-поведінкову терапію,
+експозицію та десенсибілізацію.
 </p>
+
 </section>
+
 </div>
+
+<!-- SERVICES -->
 
 <div id="page-services" class="page">
+
 <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-<h2 class="font-serif text-5xl text-center mb-16 fade">Послуги</h2>
+
+<h2 class="font-serif text-5xl text-center mb-16">
+Послуги
+</h2>
+
 <div class="grid md:grid-cols-3 gap-8">
-<div class="service-card fade" onclick="toggleService(this)">
+
+<div class="service-card" onclick="toggleService(this)">
 <h3 class="font-serif text-2xl primary mb-4">Тривожні розлади</h3>
-<p class="opacity-70 text-sm mb-4">
-Робота з генералізованою тривогою, панічними атаками та фобіями.
-</p>
+<p>Робота з генералізованою тривогою та фобіями.</p>
+
 <div class="service-details">
-<p class="opacity-80 mb-4">
-При тривожних розладах ми:
-</p>
-<ul class="opacity-80 space-y-1 mb-4">
-<li>• знижуємо гіперконтроль</li>
-<li>• працюємо з катастрофізацією</li>
-<li>• тренуємо нервову систему витримувати невизначеність</li>
-<li>• перебудовуємо поведінкові стратегії</li>
-</ul>
-<p class="opacity-80">
-Тривога не зникає назавжди. Але вона перестає керувати життям.
-</p>
+<p>Зниження гіперконтролю та тренування нервової системи.</p>
 </div>
 </div>
 
-<div class="service-card fade" onclick="toggleService(this)">
+<div class="service-card" onclick="toggleService(this)">
 <h3 class="font-serif text-2xl primary mb-4">ОКР</h3>
-<p class="opacity-70 text-sm mb-4">
-Нав'язливі думки, страхи та ритуали.
-</p>
+<p>Нав'язливі думки та ритуали.</p>
+
 <div class="service-details">
-<p class="opacity-80 mb-4">
-ОКР — це цикл:
-</p>
-<p class="opacity-80 mb-4">
-нав'язлива думка → тривога → ритуал → тимчасове полегшення → посилення циклу
-</p>
-<p class="opacity-80 mb-4">
-Ми розриваємо цей цикл без боротьби з думками та нескінченного аналізу.
-</p>
+<p>Робота з циклом ОКР через експозицію.</p>
 </div>
 </div>
 
-<div class="service-card fade" onclick="toggleService(this)">
+<div class="service-card" onclick="toggleService(this)">
 <h3 class="font-serif text-2xl primary mb-4">Залежності</h3>
-<p class="opacity-70 text-sm mb-4">
-Алкогольні, наркотичні та поведінкові залежності.
-</p>
+<p>Алкогольні та поведінкові залежності.</p>
+
 <div class="service-details">
-<p class="opacity-80 mb-4">
-Залежність — це нейронний цикл:
-</p>
-<p class="opacity-80 mb-4">
-тригер → імпульс → вживання → полегшення → посилення зв'язку
-</p>
-<p class="opacity-80">
-Формуємо нову систему реагування та стабілізуємо нервову систему.
-</p>
+<p>Формування нових стратегій реагування.</p>
 </div>
 </div>
 
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Сексуальні дисфункції
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Робота з сексуальністю, інтимністю та сексуальною залежністю.
-</p>
+<div class="service-card" onclick="toggleService(this)">
+<h3 class="font-serif text-2xl primary mb-4">Сексуальні труднощі</h3>
+<p>Робота з сексуальними дисфункціями.</p>
+
 <div class="service-details">
-<p class="opacity-80 mb-4">
-Сексуальність іноді стає способом зняти тривогу або уникнути почуттів.
-</p>
-<ul class="opacity-80 space-y-1 mb-4">
-<li>• зниження лібідо</li>
-<li>• труднощі з оргазмом</li>
-<li>• еректильні труднощі</li>
-<li>• передчасна еякуляція</li>
-<li>• нав'язливе використання порно</li>
-<li>• втрата контролю над імпульсами</li>
-</ul>
-<p class="opacity-80">
-Робота проходить конфіденційно, без осуду та моралізації.
-</p>
+<p>Конфіденційна терапія без осуду.</p>
 </div>
 </div>
 
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Панічні атаки
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Робота зі страхом втрати контролю.
-</p>
+<div class="service-card" onclick="toggleService(this)">
+<h3 class="font-serif text-2xl primary mb-4">Панічні атаки</h3>
+<p>Робота зі страхом втрати контролю.</p>
+
 <div class="service-details">
-<p class="opacity-80">
-Інтероцептивна експозиція та стабілізація нервової системи.
-</p>
+<p>Експозиція та стабілізація нервової системи.</p>
 </div>
 </div>
 
-<div class="service-card fade" onclick="toggleService(this)">
-<h3 class="font-serif text-2xl primary mb-4">
-Онлайн консультація
-</h3>
-<p class="opacity-70 text-sm mb-4">
-Індивідуальна онлайн сесія.
-</p>
+<div class="service-card">
+<h3 class="font-serif text-2xl primary mb-4">Онлайн консультація</h3>
+<p>Zoom / Google Meet</p>
+
 <div class="service-details">
-<p class="opacity-80 mb-4">
-Zoom / Google Meet
-</p>
-<p class="opacity-80">
-Тривалість: <strong>60–75 хв</strong>
-</p>
+<p>Тривалість: 60–75 хв</p>
 </div>
 </div>
 
 </div>
+
 </section>
+
 </div>
+
+<!-- GALLERY -->
 
 <div id="page-gallery" class="page">
+
 <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-<h2 class="font-serif text-5xl text-center mb-16 fade">Галерея</h2>
-<div class="grid md:grid-cols-3 gap-6">
-<div class="bg-gradient-to-br from-[#c9a86c]/10 to-[#1a1a1a] h-64 rounded-xl border border-[#c9a86c]/20 hover:scale-105 transition-all duration-300 cursor-pointer fade"></div>
-<div class="bg-gradient-to-br from-[#c9a86c]/10 to-[#1a1a1a] h-64 rounded-xl border border-[#c9a86c]/20 hover:scale-105 transition-all duration-300 cursor-pointer fade" style="animation-delay:0.1s;"></div>
-<div class="bg-gradient-to-br from-[#c9a86c]/10 to-[#1a1a1a] h-64 rounded-xl border border-[#c9a86c]/20 hover:scale-105 transition-all duration-300 cursor-pointer fade" style="animation-delay:0.2s;"></div>
-<div class="md:col-span-2 bg-gradient-to-br from-[#c9a86c]/5 to-[#1a1a1a] h-64 rounded-xl border border-[#c9a86c]/20 hover:scale-105 transition-all duration-300 cursor-pointer fade" style="animation-delay:0.3s;"></div>
-</div>
-</section>
+
+<h2 class="font-serif text-5xl text-center mb-16">
+Галерея
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8 gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.jpg">
+
 </div>
 
-<div id="page-contact" class="page">
-<section class="pt-32 pb-20 text-center px-6 max-w-2xl mx-auto">
-<h2 class="font-serif text-5xl mb-10 fade">Контакти</h2>
-<p class="mb-4 text-xl fade">WhatsApp: <span class="primary font-semibold">+380986528383</span></p>
-<div class="flex justify-center gap-4 flex-wrap fade">
-<a href="https://www.instagram.com/psixologgelyya" target="_blank" class="btn">Instagram</a>
-<a href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk" target="_blank" class="btn" style="background:#ff0050;border-color:#ff0050;color:#fff;">TikTok</a>
-<a href="https://wa.me/380986528383" target="_blank" class="btn">WhatsApp</a>
-</div>
-<p class="opacity-70 mt-12 text-sm fade">Відповідь протягом 1-2 годин</p>
 </section>
+
+</div>
+
+<!-- CONTACT -->
+
+<div id="page-contact" class="page">
+
+<section class="pt-32 pb-20 text-center px-6">
+
+<h2 class="font-serif text-5xl mb-10">
+Контакти
+</h2>
+
+<p class="mb-6 text-xl">
+WhatsApp: <span class="primary font-semibold">+380986528383</span>
+</p>
+
+<div class="flex justify-center gap-4 flex-wrap">
+
+<a href="https://www.instagram.com/psixologgelyya" target="_blank" class="btn">
+Instagram
+</a>
+
+<a href="https://www.tiktok.com/@angelina_vodianik" target="_blank" class="btn" style="background:#ff0050;border-color:#ff0050;">
+TikTok
+</a>
+
+<a href="https://wa.me/380986528383" target="_blank" class="btn">
+WhatsApp
+</a>
+
+</div>
+
+</section>
+
 </div>
 
 <script>
+
 function navigateTo(page){
-document.querySelectorAll(".page").forEach(p=>{
-p.classList.remove("active")
-})
-document.getElementById("page-"+page).classList.add("active")
-window.scrollTo({top:0,behavior:"smooth"})
+
+document.querySelectorAll(".page").forEach(function(p){
+p.classList.remove("active");
+});
+
+document.getElementById("page-"+page).classList.add("active");
+
+window.scrollTo(0,0);
+
 }
+
 function toggleService(card){
-card.classList.toggle("active")
+
+card.classList.toggle("active");
+
 }
-document.addEventListener("DOMContentLoaded",()=>{
-setTimeout(()=>{
-document.querySelectorAll(".fade").forEach(el=>{
-el.classList.add("show")
-})
-},100)
-document.addEventListener("click",e=>{
-if(!e.target.closest(".service-card")){
-document.querySelectorAll(".service-card").forEach(card=>{
-card.classList.remove("active")
-})
-}
-})
-})
+
 </script>
 
 </body>
 </html>
+
