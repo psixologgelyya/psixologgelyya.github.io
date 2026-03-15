@@ -1,422 +1,436 @@
 <!doctype html>
+
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Водяник Ангеліна — психолог</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>Водяник Ангеліна — психолог</title>
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  >
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    body {
-      background: #0f0f0f;
-      color: #e8e4df;
-      font-family: "Montserrat", sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-    .font-serif {
-      font-family: "Cormorant Garamond", serif;
-    }
+<style>
 
-    .primary {
-      color: #c9a86c;
-    }
+body{
+background:#0f0f0f;
+color:#e8e4df;
+font-family:"Montserrat",sans-serif;
+}
 
-    .btn {
-      border: 1px solid #c9a86c;
-      padding: 12px 26px;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.font-serif{
+font-family:"Cormorant Garamond",serif;
+}
 
-    .btn:hover {
-      background: #c9a86c;
-      color: #000;
-    }
+.primary{
+color:#c9a86c;
+}
 
-    .page {
-      display: none;
-      opacity: 0;
-      transition: 0.6s opacity;
-    }
+.btn{
+border:1px solid #c9a86c;
+padding:12px 26px;
+transition:.3s;
+display:flex;
+align-items:center;
+justify-content:center;
+}
 
-    .page.active {
-      display: block;
-      opacity: 1;
-    }
+.btn:hover{
+background:#c9a86c;
+color:#000;
+}
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url("photo_2026-02-25_18-20-26.jpg") center/cover no-repeat;
-      filter: blur(8px) brightness(0.35);
-      transform: scale(1.1);
-    }
+.page{
+display:none;
+opacity:0;
+transition:.6s;
+}
 
-    .service-card {
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 10px;
-      transition: 0.35s;
-      border: 1px solid rgba(201, 168, 108, 0.15);
-      cursor: pointer;
-    }
+.page.active{
+display:block;
+opacity:1;
+}
 
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: #c9a86c;
-    }
+.hero-bg{
+position:absolute;
+inset:0;
+background:url("photo_2026-02-25_18-20-26.jpg") center/cover no-repeat;
+filter:blur(8px) brightness(.35);
+transform:scale(1.1);
+}
 
-    .service-card.active {
-      border-color: #c9a86c;
-      box-shadow: 0 20px 40px rgba(201, 168, 108, 0.3);
-    }
+.service-card{
+background:#1a1a1a;
+padding:30px;
+border-radius:10px;
+border:1px solid rgba(201,168,108,.15);
+cursor:pointer;
+transition:.35s;
+}
 
-    .service-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: 0.4s;
-    }
+.service-card:hover{
+transform:translateY(-6px);
+border-color:#c9a86c;
+}
 
-    .service-card.active .service-details {
-      max-height: 600px;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(201, 168, 108, 0.2);
-    }
+.service-card.active{
+border-color:#c9a86c;
+box-shadow:0 20px 40px rgba(201,168,108,.3);
+}
 
-    .fade {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: 1s;
-    }
+.service-details{
+max-height:0;
+overflow:hidden;
+transition:.4s;
+}
 
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.service-card.active .service-details{
+max-height:1200px;
+margin-top:20px;
+padding-top:20px;
+border-top:1px solid rgba(201,168,108,.2);
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      transition: 0.4s;
-    }
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
 
-    .float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 50;
-    }
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:.4s;
+}
 
-    .float a {
-      background: #1a1a1a;
-      border: 1px solid #c9a86c;
-      padding: 10px 16px;
-      font-size: 12px;
-      color: #e8e4df;
-      text-decoration: none;
-    }
+.gallery img:hover{
+transform:scale(1.05);
+}
 
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 34px;
-        line-height: 1.2;
-      }
-    }
-  </style>
+.float{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:50;
+}
+
+.float a{
+background:#1a1a1a;
+border:1px solid #c9a86c;
+padding:10px 16px;
+font-size:12px;
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:34px;
+line-height:1.2;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-white/10">
-  <div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
-    <div onclick="navigateTo('home')" class="font-serif text-xl primary cursor-pointer">
-      Водяник Ангеліна
-    </div>
-    <div class="flex gap-4 md:gap-8 text-sm">
-      <div onclick="navigateTo('home')" class="cursor-pointer">Головна</div>
-      <div onclick="navigateTo('about')" class="cursor-pointer">Про мене</div>
-      <div onclick="navigateTo('services')" class="cursor-pointer">Послуги</div>
-      <div onclick="navigateTo('gallery')" class="cursor-pointer">Галерея</div>
-      <div onclick="navigateTo('contact')" class="cursor-pointer">Контакти</div>
-    </div>
-  </div>
+
+<div class="max-w-6xl mx-auto flex justify-between items-center h-20 px-6">
+
+<div onclick="navigateTo('home')" class="font-serif text-xl primary cursor-pointer">
+Водяник Ангеліна
+</div>
+
+<div class="flex gap-4 md:gap-8 text-sm">
+
+<div onclick="navigateTo('home')" class="cursor-pointer">Головна</div>
+
+<div onclick="navigateTo('about')" class="cursor-pointer">Про мене</div>
+
+<div onclick="navigateTo('services')" class="cursor-pointer">Послуги</div>
+
+<div onclick="navigateTo('gallery')" class="cursor-pointer">Галерея</div>
+
+<div onclick="navigateTo('contact')" class="cursor-pointer">Контакти</div>
+
+</div>
+</div>
 </nav>
 
-<!-- HOME -->
 <div id="page-home" class="page active">
-  <section class="min-h-screen flex items-center justify-center text-center relative px-6">
-    <div class="hero-bg"></div>
-    <div class="relative max-w-3xl">
-      <p class="uppercase tracking-[0.4em] text-sm primary mb-4">
-        Психолог • Recovery Specialist
-      </p>
-      <h1 class="font-serif text-6xl hero-title mb-6">
-        Робота з тривогою,
-        <span class="primary">ОКР та залежностями</span>
-      </h1>
-      <p class="opacity-80 mb-10 text-lg">
-        Зміна нейронних зв'язків через експозицію та десенсибілізацію
-      </p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <button onclick="navigateTo('contact')" class="btn">
-          Записатися
-        </button>
-        <button onclick="navigateTo('services')" class="btn">
-          Послуги
-        </button>
-      </div>
-    </div>
-  </section>
+
+<section class="min-h-screen flex items-center justify-center text-center relative px-6">
+
+<div class="hero-bg"></div>
+
+<div class="relative max-w-3xl">
+
+<p class="uppercase tracking-[0.4em] text-sm primary mb-4">
+Психолог • Recovery Specialist
+</p>
+
+<h1 class="font-serif text-6xl hero-title mb-6">
+Робота з тривогою,
+<span class="primary">ОКР та залежностями</span>
+</h1>
+
+<p class="opacity-80 mb-10 text-lg">
+Зміна нейронних зв'язків через експозицію та десенсибілізацію
+</p>
+
+<div class="flex justify-center gap-4 flex-wrap">
+
+<button onclick="navigateTo('contact')" class="btn">
+Записатися
+</button>
+
+<button onclick="navigateTo('services')" class="btn">
+Послуги
+</button>
+
+</div>
+</div>
+</section>
 </div>
 
-<!-- ABOUT -->
-<div id="page-about" class="page">
-  <section class="pt-32 pb-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6">
-    <img
-      src="photo_2026-02-25_18-20-26.jpg"
-      alt="Фото психолога Водяник Ангеліни"
-      class="rounded shadow-2xl fade"
-    >
-    <div class="fade">
-      <h2 class="font-serif text-4xl mb-6">
-        Про мене
-      </h2>
-      <p class="opacity-80 mb-6">
-        Я психолог і Recovery Specialist. Працюю з тривожними розладами, ОКР та залежностями,
-        використовуючи доказові методи психотерапії.
-      </p>
-      <p class="opacity-80">
-        У роботі використовую когнітивно-поведінкову терапію, експозицію та десенсибілізацію
-        для зміни нейронних механізмів, які підтримують розлад.
-      </p>
-    </div>
-  </section>
-</div>
-
-<!-- SERVICES -->
 <div id="page-services" class="page">
-  <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-    <h2 class="font-serif text-5xl text-center mb-16">
-      Послуги
-    </h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="service-card fade" onclick="toggleService(this)">
-        <h3 class="font-serif text-2xl primary mb-4">Тривожні розлади</h3>
-        <p class="opacity-70 text-sm mb-4">
-          Робота з генералізованою тривогою, соціальною тривожністю, панічними атаками та фобіями.
-        </p>
-        <div class="service-details">
-          <p class="opacity-80 mb-4">
-            Когнітивно-поведінкова терапія, експозиція, робота з негативними переконаннями.
-          </p>
-          <p class="opacity-80">
-            Зменшення симптомів тривоги та повернення контролю над життям.
-          </p>
-        </div>
-      </div>
 
-      <div class="service-card fade" onclick="toggleService(this)">
-        <h3 class="font-serif text-2xl primary mb-4">ОКР</h3>
-        <p class="opacity-70 text-sm mb-4">
-          Нав'язливі думки, страхи та компульсивні ритуали.
-        </p>
-        <div class="service-details">
-          <p class="opacity-80 mb-4">
-            ERP терапія — золотий стандарт лікування ОКР.
-          </p>
-          <p class="opacity-80">
-            Поступове зіткнення з тригерами без виконання ритуалів.
-          </p>
-        </div>
-      </div>
+<section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
 
-      <div class="service-card fade" onclick="toggleService(this)">
-        <h3 class="font-serif text-2xl primary mb-4">Залежності</h3>
-        <p class="opacity-70 text-sm mb-4">
-          Алкогольні, наркотичні та поведінкові залежності.
-        </p>
-        <div class="service-details">
-          <p class="opacity-80 mb-4">
-            Мотиваційне інтерв'ю, КПТ, робота з тригерами залежності.
-          </p>
-          <p class="opacity-80">
-            Профілактика рецидивів та формування нових звичок.
-          </p>
-        </div>
-      </div>
+<h2 class="font-serif text-5xl text-center mb-16">
+Послуги
+</h2>
 
-      <div class="service-card fade" onclick="toggleService(this)">
-        <h3 class="font-serif text-2xl primary mb-4">Сексологія</h3>
-        <p class="opacity-70 text-sm mb-4">
-          Психологічна допомога при сексуальних труднощах.
-        </p>
-        <div class="service-details">
-          <p class="opacity-80 mb-4">
-            Робота з відсутністю лібідо, еректильною дисфункцією, відсутністю оргазму.
-          </p>
-          <p class="opacity-80">
-            Гармонізація інтимного життя та відновлення близькості.
-          </p>
-        </div>
-      </div>
+<div class="grid md:grid-cols-3 gap-8">
 
-      <div class="service-card fade" onclick="toggleService(this)">
-        <h3 class="font-serif text-2xl primary mb-4">Панічні атаки</h3>
-        <p class="opacity-70 text-sm mb-4">
-          Робота зі страхом втрати контролю.
-        </p>
-        <div class="service-details">
-          <p class="opacity-80 mb-4">
-            Інтероцептивна експозиція, дихальні техніки стабілізації.
-          </p>
-          <p class="opacity-80">
-            Зникнення страху перед панічними атаками.
-          </p>
-        </div>
-      </div>
+<div class="service-card fade" onclick="toggleService(this)">
 
-      <div class="service-card fade" onclick="toggleService(this)">
-        <h3 class="font-serif text-2xl primary mb-4">Онлайн консультація</h3>
-        <p class="opacity-70 text-sm mb-4">
-          Індивідуальна онлайн сесія.
-        </p>
-        <div class="service-details">
-          <p class="opacity-80 mb-4">
-            Zoom / Google Meet. Тривалість 50–60 хвилин.
-          </p>
-          <p class="opacity-80">
-            Діагностика проблеми та план терапії.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<h3 class="font-serif text-2xl primary mb-4">Тривожні розлади</h3>
+
+<p class="opacity-70 text-sm mb-4">
+Робота з генералізованою тривогою, панічними атаками та фобіями.
+</p>
+
+<div class="service-details">
+
+<p class="opacity-80 mb-4">
+При тривожних розладах ми:
+</p>
+
+<ul class="opacity-80 space-y-1 mb-4">
+<li>• знижуємо гіперконтроль</li>
+<li>• працюємо з катастрофізацією</li>
+<li>• тренуємо нервову систему витримувати невизначеність</li>
+<li>• перебудовуємо поведінкові стратегії</li>
+</ul>
+
+<p class="opacity-80">
+Тривога не зникає назавжди. Але вона перестає керувати життям.
+</p>
+
+</div>
 </div>
 
-<!-- GALLERY -->
-<div id="page-gallery" class="page">
-  <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
-    <h2 class="font-serif text-5xl text-center mb-16">
-      Галерея
-    </h2>
-    <div class="grid md:grid-cols-3 gap-8 gallery">
-      <img src="photo1.jpg" alt="Фото 1" class="fade show">
-      <img src="photo2.jpg" alt="Фото 2" class="fade show">
-      <img src="photo3.jpg" alt="Фото 3" class="fade show">
-      <img src="photo4.jpg" alt="Фото 4" class="fade show">
-      <img src="photo5.jpg" alt="Фото 5" class="fade show">
-      <img src="photo6.jpg" alt="Фото 6" class="fade show">
-    </div>
-  </section>
+<div class="service-card fade" onclick="toggleService(this)">
+
+<h3 class="font-serif text-2xl primary mb-4">ОКР</h3>
+
+<p class="opacity-70 text-sm mb-4">
+Нав'язливі думки, страхи та ритуали.
+</p>
+
+<div class="service-details">
+
+<p class="opacity-80 mb-4">
+ОКР — це цикл:
+</p>
+
+<p class="opacity-80 mb-4">
+нав’язлива думка → тривога → ритуал → тимчасове полегшення → посилення циклу
+</p>
+
+<p class="opacity-80 mb-4">
+Ми розриваємо цей цикл без боротьби з думками та нескінченного аналізу.
+</p>
+
+</div>
 </div>
 
-<!-- CONTACT -->
+<div class="service-card fade" onclick="toggleService(this)">
+
+<h3 class="font-serif text-2xl primary mb-4">Залежності</h3>
+
+<p class="opacity-70 text-sm mb-4">
+Алкогольні, наркотичні та поведінкові залежності.
+</p>
+
+<div class="service-details">
+
+<p class="opacity-80 mb-4">
+Залежність — це нейронний цикл:
+</p>
+
+<p class="opacity-80 mb-4">
+тригер → імпульс → вживання → полегшення → посилення зв'язку
+</p>
+
+<p class="opacity-80">
+Формуємо нову систему реагування та стабілізуємо нервову систему.
+</p>
+
+</div>
+</div>
+
+<div class="service-card fade" onclick="toggleService(this)">
+
+<h3 class="font-serif text-2xl primary mb-4">
+Сексуальні дисфункції
+</h3>
+
+<p class="opacity-70 text-sm mb-4">
+Робота з сексуальністю, інтимністю та сексуальною залежністю.
+</p>
+
+<div class="service-details">
+
+<p class="opacity-80 mb-4">
+Сексуальність іноді стає способом зняти тривогу або уникнути почуттів.
+</p>
+
+<ul class="opacity-80 space-y-1 mb-4">
+<li>• зниження лібідо</li>
+<li>• труднощі з оргазмом</li>
+<li>• еректильні труднощі</li>
+<li>• передчасна еякуляція</li>
+<li>• нав'язливе використання порно</li>
+<li>• втрата контролю над імпульсами</li>
+</ul>
+
+<p class="opacity-80">
+Робота проходить конфіденційно, без осуду та моралізації.
+</p>
+
+</div>
+</div>
+
+<div class="service-card fade" onclick="toggleService(this)">
+
+<h3 class="font-serif text-2xl primary mb-4">
+Панічні атаки
+</h3>
+
+<p class="opacity-70 text-sm mb-4">
+Робота зі страхом втрати контролю.
+</p>
+
+<div class="service-details">
+
+<p class="opacity-80">
+Інтероцептивна експозиція та стабілізація нервової системи.
+</p>
+
+</div>
+</div>
+
+<div class="service-card fade" onclick="toggleService(this)">
+
+<h3 class="font-serif text-2xl primary mb-4">
+Онлайн консультація
+</h3>
+
+<p class="opacity-70 text-sm mb-4">
+Індивідуальна онлайн сесія.
+</p>
+
+<div class="service-details">
+
+<p class="opacity-80 mb-4">
+Zoom / Google Meet
+</p>
+
+<p class="opacity-80">
+Тривалість: <strong>60–75 хв</strong>
+</p>
+
+</div>
+</div>
+
+</div>
+</section>
+</div>
+
 <div id="page-contact" class="page">
-  <section class="pt-32 pb-20 text-center px-6">
-    <h2 class="font-serif text-5xl mb-10">
-      Контакти
-    </h2>
-    <p class="mb-4 text-xl">
-      WhatsApp: <span class="primary font-semibold">+380986528383</span>
-    </p>
-    <div class="flex flex-wrap justify-center gap-4 mb-8 max-w-md mx-auto">
-      <a
-        href="https://www.instagram.com/psixologgelyya"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn flex-1 min-w-[140px]"
-      >
-        Instagram
-      </a>
-      <a
-        href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn flex-1 min-w-[140px]"
-        style="background:#ff0050;border-color:#ff0050;"
-      >
-        TikTok
-      </a>
-      <a
-        href="https://wa.me/380986528383"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn flex-1 min-w-[14ESPN]"
-      >
-        WhatsApp
-      </a>
-    </div>
-  </section>
+
+<section class="pt-32 pb-20 text-center px-6">
+
+<h2 class="font-serif text-5xl mb-10">
+Контакти
+</h2>
+
+<p class="mb-4 text-xl">
+WhatsApp: <span class="primary font-semibold">+380986528383</span>
+</p>
+
+<div class="flex justify-center gap-4 flex-wrap">
+
+<a href="https://www.instagram.com/psixologgelyya" target="_blank" class="btn">
+Instagram
+</a>
+
+<a href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk" target="_blank" class="btn" style="background:#ff0050;border-color:#ff0050;">
+TikTok
+</a>
+
+<a href="https://wa.me/380986528383" target="_blank" class="btn">
+WhatsApp
+</a>
+
 </div>
 
-<!-- FLOAT -->
-<div class="float">
-  <a
-    href="https://wa.me/380986528383"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    WhatsApp
-  </a>
-  <a
-    href="https://www.instagram.com/psixologgelyya"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Instagram
-  </a>
-  <a
-    href="https://www.tiktok.com/@angelina_vodianik?_r=1&_t=ZS-94fIU5SM7rk"
-    target="_blank"
-    rel="noopener noreferrer"
-    style="background:#ff0050;border-color:#ff0050;"
-  >
-    TikTok
-  </a>
+</section>
 </div>
 
 <script>
-  function navigateTo(page) {
-    document.querySelectorAll(".page").forEach((p) => {
-      p.classList.remove("active");
-    });
-    document.getElementById("page-" + page).classList.add("active");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
 
-  function toggleService(card) {
-    card.classList.toggle("active");
-  }
+function navigateTo(page){
 
-  // Додатково: показуємо fade-елементи після завантаження
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-      document.querySelectorAll(".fade").forEach((el) => {
-        el.classList.add("show");
-      });
-    }, 100);
-  });
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active")
+})
+
+document.getElementById("page-"+page).classList.add("active")
+
+window.scrollTo({top:0,behavior:"smooth"})
+
+}
+
+function toggleService(card){
+card.classList.toggle("active")
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+setTimeout(()=>{
+document.querySelectorAll(".fade").forEach(el=>{
+el.classList.add("show")
+})
+},100)
+
+})
+
 </script>
 
 </body>
 </html>
-
