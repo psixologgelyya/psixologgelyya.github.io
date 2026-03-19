@@ -6,46 +6,68 @@
 
 <title>Психолог онлайн | Тривога, ОКР, залежності — Водяник Ангеліна</title>
 
-<meta name="description" content="Психолог онлайн. Допомога при тривозі, нав'язливих думках (ОКР) та залежностях. Простими словами і без складної теорії.">
-<meta name="keywords" content="психолог онлайн, психолог Київ, тривога, ОКР, залежність, панічні атаки">
+<meta name="description" content="Психолог онлайн. Допомога при тривозі, ОКР та залежностях. Без складної теорії. Реальні зміни вже з перших зустрічей.">
+<meta name="keywords" content="психолог онлайн, тривога, ОКР, залежності, панічні атаки">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0f0f0f">
 
 <link rel="canonical" href="https://yourdomain.com/">
-
-<!-- OpenGraph -->
-<meta property="og:title" content="Психолог онлайн — Водяник Ангеліна">
-<meta property="og:description" content="Допомога при тривозі, ОКР та залежностях. Онлайн консультації.">
-<meta property="og:image" content="photo_2026-02-25_18-20-26.jpg">
-<meta property="og:type" content="website">
-
-<link rel="icon" href="/favicon.ico">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Schema -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Psychologist",
-"name": "Водяник Ангеліна",
-"description": "Психолог онлайн. Робота з тривогою, ОКР та залежностями",
-"telephone": "+380986528383",
-"areaServed": "UA"
-}
-</script>
-
 <style>
 body{background:#0f0f0f;color:#e8e4df;font-family:'Montserrat', sans-serif;}
 .font-serif{font-family:'Cormorant Garamond', serif;}
 .primary{color:#c9a86c;}
-.btn{border:1px solid #c9a86c;padding:12px 26px;transition:.3s;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;}
+
+.btn{
+border:1px solid #c9a86c;
+padding:14px 28px;
+transition:.3s;
+display:inline-flex;
+}
 .btn:hover{background:#c9a86c;color:black;}
-.hero-bg{position:absolute;inset:0;background:url('photo_2026-02-25_18-20-26.jpg') center/cover;filter:blur(8px) brightness(.35);}
-.service-card{background:#1a1a1a;padding:25px;border-radius:10px;border:1px solid rgba(201,168,108,.15);}
-.gallery img{border-radius:10px;width:100%;height:250px;object-fit:cover;}
+
+.hero-bg{
+position:absolute;
+inset:0;
+background:url('photo_2026-02-25_18-20-26.jpg') center/cover;
+filter:blur(8px) brightness(.35);
+}
+
+.card{
+background:#1a1a1a;
+padding:25px;
+border-radius:10px;
+border:1px solid rgba(201,168,108,.2);
+}
+
+.service-card{
+cursor:pointer;
+transition:.3s;
+}
+.service-card:hover{transform:translateY(-5px);}
+
+.service-details{
+max-height:0;
+overflow:hidden;
+transition:.4s;
+}
+.service-card.active .service-details{
+max-height:500px;
+margin-top:15px;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
 </style>
 </head>
 
@@ -61,7 +83,7 @@ body{background:#0f0f0f;color:#e8e4df;font-family:'Montserrat', sans-serif;}
 </h1>
 
 <p class="mb-8">
-Допомагаю впоратися з тривогою, нав'язливими думками та залежностями простими словами і без складної теорії
+Ви можете перестати жити в постійній тривозі і повернути контроль над своїм життям
 </p>
 
 <a href="https://wa.me/380986528383" class="btn">Записатися на консультацію</a>
@@ -69,19 +91,43 @@ body{background:#0f0f0f;color:#e8e4df;font-family:'Montserrat', sans-serif;}
 </section>
 
 <!-- ABOUT -->
-<section class="py-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
-<img src="photo_2026-02-25_18-20-26.jpg" loading="lazy" alt="Психолог Ангеліна Водяник онлайн" class="rounded">
+<section class="py-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 fade">
+<img src="photo_2026-02-25_18-20-26.jpg" loading="lazy" alt="Психолог онлайн" class="rounded">
 
 <div>
 <h2 class="font-serif text-3xl mb-4">Про мене</h2>
 
 <p class="mb-4">
-Я психолог і допомагаю людям справлятися з тривогою, ОКР та залежностями.
+Я психолог і допомагаю людям впоратися з тривогою, нав'язливими думками та залежностями.
 </p>
 
 <p>
-Пояснюю просто — що з вами відбувається і як це змінити без зайвої складності.
+Пояснюю просто і даю конкретні кроки, які реально працюють.
 </p>
+</div>
+</section>
+
+<!-- WHY ME -->
+<section class="py-20 px-6 max-w-6xl mx-auto fade">
+<h2 class="font-serif text-4xl text-center mb-10">Чому варто звернутися до мене</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="card">
+<h3 class="primary mb-2">Без води</h3>
+<p>Тільки конкретні дії і зрозумілі пояснення</p>
+</div>
+
+<div class="card">
+<h3 class="primary mb-2">Результат</h3>
+<p>Ви почнете відчувати зміни вже в процесі роботи</p>
+</div>
+
+<div class="card">
+<h3 class="primary mb-2">Без осуду</h3>
+<p>Ви можете говорити про будь-що відкрито</p>
+</div>
+
 </div>
 </section>
 
@@ -91,52 +137,71 @@ body{background:#0f0f0f;color:#e8e4df;font-family:'Montserrat', sans-serif;}
 
 <div class="grid md:grid-cols-3 gap-6">
 
-<div class="service-card">
+<div class="service-card card fade" onclick="toggleService(this)">
 <h3 class="primary text-xl mb-2">Тривога і панічні атаки</h3>
-<p>
-Постійна тривога, страх, напруга або панічні атаки — допомагаю це зменшити і повернути спокій
-</p>
+<p>Постійна тривога, страх, напруга</p>
+
+<div class="service-details">
+<p>Навчу, як заспокоювати себе і не жити в напрузі постійно.</p>
+</div>
 </div>
 
-<div class="service-card">
-<h3 class="primary text-xl mb-2">ОКР (нав'язливі думки)</h3>
-<p>
-Якщо вас мучать повторювані думки або ритуали — ми поступово навчимось з ними справлятися
-</p>
+<div class="service-card card fade" onclick="toggleService(this)">
+<h3 class="primary text-xl mb-2">ОКР</h3>
+<p>Нав'язливі думки і ритуали</p>
+
+<div class="service-details">
+<p>Поступово зменшимо вплив думок і повернемо контроль.</p>
+</div>
 </div>
 
-<div class="service-card">
+<div class="service-card card fade" onclick="toggleService(this)">
 <h3 class="primary text-xl mb-2">Залежності</h3>
-<p>
-Алкоголь, наркотики або звички — допомагаю вийти з цього стану і повернути контроль
-</p>
+<p>Алкоголь, наркотики, звички</p>
+
+<div class="service-details">
+<p>Допоможу вийти з цього стану і змінити поведінку.</p>
+</div>
 </div>
 
 </div>
 </section>
 
-<!-- GALLERY -->
-<section class="py-20 px-6 max-w-6xl mx-auto">
-<h2 class="font-serif text-4xl text-center mb-10">Галерея</h2>
+<!-- HOW IT WORKS -->
+<section class="py-20 px-6 max-w-6xl mx-auto fade">
+<h2 class="font-serif text-4xl text-center mb-10">Як проходить робота</h2>
 
-<div class="grid md:grid-cols-3 gap-6 gallery">
-<img src="photo1.jpg" loading="lazy" alt="Консультація психолога онлайн">
-<img src="photo2.jpg" loading="lazy" alt="Допомога при тривозі">
-<img src="photo3.jpg" loading="lazy" alt="Психолог онлайн Україна">
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="card">
+<h3 class="primary mb-2">1. Знайомство</h3>
+<p>Обговорюємо вашу ситуацію і цілі</p>
+</div>
+
+<div class="card">
+<h3 class="primary mb-2">2. План</h3>
+<p>Я пояснюю, що будемо робити і як це працює</p>
+</div>
+
+<div class="card">
+<h3 class="primary mb-2">3. Робота</h3>
+<p>Поступово змінюємо стан і поведінку</p>
+</div>
+
 </div>
 </section>
 
 <!-- SEO TEXT -->
-<section class="py-20 max-w-4xl mx-auto px-6">
+<section class="py-20 max-w-4xl mx-auto px-6 fade">
 <h2 class="text-2xl mb-4">Психолог онлайн Україна</h2>
 
 <p>
-Я працюю з клієнтами по всій Україні — Київ, Львів, Одеса, Харків.
-Допомагаю при тривозі, нав'язливих думках та залежностях.
+Я працюю з клієнтами по всій Україні: Київ, Львів, Одеса, Харків.
+Допомагаю при тривозі, ОКР та залежностях.
 </p>
 
 <p class="mt-4">
-Онлайн консультації — це зручно. Ви можете отримати допомогу з будь-якого місця.
+Онлайн консультації дозволяють отримати допомогу з будь-якого місця.
 </p>
 </section>
 
@@ -145,11 +210,29 @@ body{background:#0f0f0f;color:#e8e4df;font-family:'Montserrat', sans-serif;}
 <h2 class="font-serif text-4xl mb-6">Запис на консультацію</h2>
 
 <p class="mb-6">
-Напишіть мені в WhatsApp — відповім і підберемо зручний час
+Напишіть у WhatsApp — підберемо зручний час
 </p>
 
 <a href="https://wa.me/380986528383" class="btn">Написати в WhatsApp</a>
 </section>
+
+<script>
+function toggleService(card){
+card.classList.toggle("active")
+}
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el)
+})
+</script>
 
 </body>
 </html>
